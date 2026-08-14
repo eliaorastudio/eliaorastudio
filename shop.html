@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop — Elia Ora Studio</title>
+<meta name="description" content="Shop the current Elia Ora Studio collection — elevated apparel crafted with intention.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>ELIA ORA STUDIO</span><span>·</span><span>ELEVATED APPAREL</span><span>·</span><span>CRAFTED WITH INTENTION</span><span>·</span><span>WEAR THE LIGHT</span><span>·</span><span>EST. 1447 A.H.</span><span>·</span><span>TIMELESS REFINEMENT</span><span>·</span>
+    <span>ELIA ORA STUDIO</span><span>·</span><span>ELEVATED APPAREL</span><span>·</span><span>CRAFTED WITH INTENTION</span><span>·</span><span>WEAR THE LIGHT</span><span>·</span><span>EST. 1447 A.H.</span><span>·</span><span>TIMELESS REFINEMENT</span><span>·</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html#hero" class="logo">Elia Ora <em>Studio</em></a>
+    <nav class="nav" id="site-nav">
+      <a href="shop.html" aria-current="page">Shop</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#philosophy">Philosophy</a>
+      <a href="index.html#collection">Collection</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="track.html">Track Order</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" type="button" data-cart-open aria-haspopup="dialog">
+        Cart <span class="cart-count">0</span>
+      </button>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="section" style="padding-bottom:0;">
+    <div class="container section-head reveal">
+      <span class="eyebrow">Current Season</span>
+      <h1 style="font-size:clamp(2.2rem,5vw,3.4rem);">The Collection</h1>
+      <p style="margin-top:1rem; max-width:520px;">Every piece is crafted in limited runs, designed to endure well beyond the season it was born in.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="collection-toolbar reveal">
+        <div class="filter-row" role="group" aria-label="Filter by category">
+          <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All Pieces</button>
+          <button class="filter-btn" type="button" data-filter="signature" aria-pressed="false">Signature</button>
+          <button class="filter-btn" type="button" data-filter="statement" aria-pressed="false">Statement</button>
+          <button class="filter-btn" type="button" data-filter="set" aria-pressed="false">Curated Sets</button>
+        </div>
+        <span class="result-count">6 pieces</span>
+      </div>
+
+      <div class="product-grid">
+        <article class="product-card reveal" data-category="signature">
+          <div class="product-media">
+            <span class="product-tag">Signature</span>
+            <span class="mono">E·O</span>
+          </div>
+          <span class="eyebrow" style="margin-bottom:0.3rem;">Signature Piece</span>
+          <h3 class="product-title">The Ora Silhouette</h3>
+          <p class="product-desc">Fluid · Considered · Luminous</p>
+          <div class="product-foot">
+            <span class="product-price">PKR 12,500</span>
+            <button class="add-btn" type="button" data-id="ora-silhouette" data-name="The Ora Silhouette" data-price="12500">Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="statement">
+          <div class="product-media">
+            <span class="product-tag">Statement</span>
+            <span class="mono">E·O</span>
+          </div>
+          <span class="eyebrow" style="margin-bottom:0.3rem;">Statement</span>
+          <h3 class="product-title">The Elia Drape</h3>
+          <p class="product-desc">Structured · Graceful · Timeless</p>
+          <div class="product-foot">
+            <span class="product-price">PKR 15,800</span>
+            <button class="add-btn" type="button" data-id="elia-drape" data-name="The Elia Drape" data-price="15800">Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="set">
+          <div class="product-media">
+            <span class="product-tag">Curated Set</span>
+            <span class="mono">E·O</span>
+          </div>
+          <span class="eyebrow" style="margin-bottom:0.3rem;">Set</span>
+          <h3 class="product-title">The Light Edit</h3>
+          <p class="product-desc">Essential · Elevated · Enduring</p>
+          <div class="product-foot">
+            <span class="product-price">PKR 22,000</span>
+            <button class="add-btn" type="button" data-id="light-edit" data-name="The Light Edit" data-price="22000">Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="signature">
+          <div class="product-media">
+            <span class="product-tag">Signature</span>
+            <span class="mono">E·O</span>
+          </div>
+          <span class="eyebrow" style="margin-bottom:0.3rem;">Signature Piece</span>
+          <h3 class="product-title">The Lumen Coat</h3>
+          <p class="product-desc">Enveloping · Refined · Quiet</p>
+          <div class="product-foot">
+            <span class="product-price">PKR 26,400</span>
+            <button class="add-btn" type="button" data-id="lumen-coat" data-name="The Lumen Coat" data-price="26400">Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="statement">
+          <div class="product-media">
+            <span class="product-tag">Statement</span>
+            <span class="mono">E·O</span>
+          </div>
+          <span class="eyebrow" style="margin-bottom:0.3rem;">Statement</span>
+          <h3 class="product-title">The Solace Gown</h3>
+          <p class="product-desc">Sculpted · Fluid · Ceremonial</p>
+          <div class="product-foot">
+            <span class="product-price">PKR 31,200</span>
+            <button class="add-btn" type="button" data-id="solace-gown" data-name="The Solace Gown" data-price="31200">Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="set">
+          <div class="product-media">
+            <span class="product-tag">Curated Set</span>
+            <span class="mono">E·O</span>
+          </div>
+          <span class="eyebrow" style="margin-bottom:0.3rem;">Set</span>
+          <h3 class="product-title">The Quiet Hours Set</h3>
+          <p class="product-desc">Considered · Layered · Enduring</p>
+          <div class="product-foot">
+            <span class="product-price">PKR 19,600</span>
+            <button class="add-btn" type="button" data-id="quiet-hours" data-name="The Quiet Hours Set" data-price="19600">Add to Cart</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <a href="index.html#hero" class="logo">Elia Ora Studio</a>
+      <ul class="footer-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#philosophy">Philosophy</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="track.html">Track Order</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Elia Ora Studio · All rights reserved</span>
+      <span>Est. 1447 A.H.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="cart-overlay" data-cart-close></div>
+<aside class="cart-drawer" role="dialog" aria-label="Shopping cart">
+  <div class="cart-drawer-head">
+    <h3>Your Cart</h3>
+    <button class="cart-close" type="button" data-cart-close aria-label="Close cart">&times;</button>
+  </div>
+  <div class="cart-items"></div>
+  <div class="cart-drawer-foot">
+    <div class="cart-subtotal"><span>Subtotal</span><span class="cart-subtotal-amount">PKR 0</span></div>
+    <a class="btn btn-solid" href="index.html#contact" style="width:100%; justify-content:center;">Checkout Enquiry</a>
+  </div>
+</aside>
+
+<script src="script.js"></script>
+</body>
+</html>
