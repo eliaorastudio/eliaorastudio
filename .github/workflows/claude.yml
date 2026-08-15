@@ -7,8 +7,12 @@ on:
     types: [created]
 
 jobs:
-  run-claude:
+ run-claude:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+      issues: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
