@@ -34,6 +34,97 @@
     revealEls.forEach(function (el) { el.classList.add('is-visible'); });
   }
 
+  /* ---------- Image carousel (swipe / click / arrows / keyboard) ---------- */
+  document.querySelectorAll('[data-carousel]').forEach(function (root) {
+    var track = root.querySelector('[data-carousel-track]');
+    var viewport = root.querySelector('[data-carousel-viewport]');
+    var slides = Array.prototype.slice.call(root.querySelectorAll('.carousel-slide'));
+    var dotsWrap = root.querySelector('[data-carousel-dots]');
+    var prev = root.querySelector('[data-carousel-prev]');
+    var next = root.querySelector('[data-carousel-next]');
+    if (!track || !viewport || slides.length < 2) return;
+
+    var index = 0;
+    var dots = [];
+
+    if (dotsWrap) {
+      slides.forEach(function (slide, i) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'carousel-dot';
+        dot.setAttribute('aria-label', 'View image ' + (i + 1) + ' of ' + slides.length);
+        dot.addEventListener('click', function () { go(i); });
+        dotsWrap.appendChild(dot);
+        dots.push(dot);
+      });
+    }
+
+    function go(i) {
+      index = (i + slides.length) % slides.length;
+      track.style.transform = 'translateX(' + (-index * 100) + '%)';
+      slides.forEach(function (slide, n) {
+        slide.setAttribute('aria-hidden', n === index ? 'false' : 'true');
+      });
+      dots.forEach(function (dot, n) {
+        dot.setAttribute('aria-current', n === index ? 'true' : 'false');
+      });
+    }
+
+    if (prev) prev.addEventListener('click', function () { go(index - 1); });
+    if (next) next.addEventListener('click', function () { go(index + 1); });
+
+    /* Swipe (pointer or touch) — a short press without travel counts as a click-through. */
+    var SWIPE_MIN = 40;
+    var startX = null;
+    var travel = 0;
+
+    function dragStart(x) { startX = x; travel = 0; }
+    function dragMove(x) { if (startX !== null) travel = x - startX; }
+    function dragEnd() {
+      if (startX === null) return;
+      if (Math.abs(travel) >= SWIPE_MIN) {
+        go(index + (travel < 0 ? 1 : -1));
+      }
+      startX = null;
+    }
+
+    if (window.PointerEvent) {
+      viewport.addEventListener('pointerdown', function (e) {
+        if (e.pointerType === 'mouse' && e.button !== 0) return;
+        dragStart(e.clientX);
+      });
+      /* Move/up on the window so a gesture that leaves the frame still resolves. */
+      window.addEventListener('pointermove', function (e) { dragMove(e.clientX); });
+      window.addEventListener('pointerup', dragEnd);
+      window.addEventListener('pointercancel', function () { startX = null; });
+    } else {
+      viewport.addEventListener('touchstart', function (e) { dragStart(e.touches[0].clientX); }, { passive: true });
+      window.addEventListener('touchmove', function (e) { dragMove(e.touches[0].clientX); }, { passive: true });
+      window.addEventListener('touchend', dragEnd);
+    }
+
+    viewport.addEventListener('click', function (e) {
+      if (e.target.closest('.carousel-arrow')) return;
+      if (Math.abs(travel) >= 6) return;
+      go(index + 1);
+    });
+
+    root.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { go(index - 1); e.preventDefault(); }
+      if (e.key === 'ArrowRight') { go(index + 1); e.preventDefault(); }
+    });
+
+    /* Graceful placeholder if a product image is missing. */
+    root.querySelectorAll('.carousel-slide img').forEach(function (img) {
+      img.addEventListener('error', function () {
+        img.parentNode.classList.add('is-missing');
+      });
+      if (img.complete && img.naturalWidth === 0) img.parentNode.classList.add('is-missing');
+    });
+
+    go(0);
+  });
+
   /* ---------- Cart (localStorage-backed) ---------- */
   var CART_KEY = 'eos_cart';
 

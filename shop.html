@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shop — Elia Ora Studio</title>
-<meta name="description" content="Shop the current Elia Ora Studio collection — elevated apparel crafted with intention.">
+<meta name="description" content="Shop the current Elia Ora Studio collections — elevated apparel crafted with intention, including our medical scrub edit.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -24,9 +24,9 @@
     <a href="index.html#hero" class="logo">Elia Ora <em>Studio</em></a>
     <nav class="nav" id="site-nav">
       <a href="shop.html" aria-current="page">Shop</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#philosophy">Philosophy</a>
-      <a href="index.html#collection">Collection</a>
+      <a href="index.html#collection">Collections</a>
+      <a href="story.html">Our Story</a>
+      <a href="philosophy.html">Philosophy</a>
       <a href="index.html#contact">Contact</a>
       <a href="track.html">Track Order</a>
     </nav>
@@ -45,7 +45,7 @@
   <section class="section" style="padding-bottom:0;">
     <div class="container section-head reveal">
       <span class="eyebrow">Current Season</span>
-      <h1 style="font-size:clamp(2.2rem,5vw,3.4rem);">The Collection</h1>
+      <h1 style="font-size:clamp(2.2rem,5vw,3.4rem);">The Collections</h1>
       <p style="margin-top:1rem; max-width:520px;">Every piece is crafted in limited runs, designed to endure well beyond the season it was born in.</p>
     </div>
   </section>
@@ -58,11 +58,38 @@
           <button class="filter-btn" type="button" data-filter="signature" aria-pressed="false">Signature</button>
           <button class="filter-btn" type="button" data-filter="statement" aria-pressed="false">Statement</button>
           <button class="filter-btn" type="button" data-filter="set" aria-pressed="false">Curated Sets</button>
+          <button class="filter-btn" type="button" data-filter="medical" aria-pressed="false">Medical Edit</button>
         </div>
-        <span class="result-count">6 pieces</span>
+        <span class="result-count">7 pieces</span>
       </div>
 
       <div class="product-grid">
+        <article class="product-card reveal" data-category="medical">
+          <div class="carousel product-carousel" data-carousel aria-roledescription="carousel" aria-label="The Ora Medical Scrub Dress — product images">
+            <div class="carousel-viewport" data-carousel-viewport>
+              <div class="carousel-track" data-carousel-track>
+                <figure class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Image 1 of 2">
+                  <img src="assets/medical-scrub-navy-1.jpg" alt="The Ora Medical Scrub Dress in navy with ivory piping — front view" width="1200" height="1600" loading="lazy" draggable="false">
+                </figure>
+                <figure class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Image 2 of 2">
+                  <img src="assets/medical-scrub-navy-2.jpg" alt="The Ora Medical Scrub Dress in navy with ivory piping — relaxed drape detail" width="1200" height="1600" loading="lazy" draggable="false">
+                </figure>
+              </div>
+              <span class="product-tag">Medical Edit</span>
+              <button class="carousel-arrow carousel-prev" type="button" data-carousel-prev aria-label="Previous image">&lsaquo;</button>
+              <button class="carousel-arrow carousel-next" type="button" data-carousel-next aria-label="Next image">&rsaquo;</button>
+            </div>
+            <div class="carousel-dots" data-carousel-dots></div>
+          </div>
+          <span class="eyebrow" style="margin-bottom:0.3rem;">Featured Piece</span>
+          <h3 class="product-title">The Ora Medical Scrub Dress</h3>
+          <p class="product-desc">Navy · Ivory Piping · Two-Piece Set</p>
+          <div class="product-foot">
+            <span class="product-price">Rs. 5,499</span>
+            <button class="add-btn" type="button" data-id="medical-scrub-dress" data-name="The Ora Medical Scrub Dress" data-price="5499">Add to Cart</button>
+          </div>
+        </article>
+
         <article class="product-card reveal" data-category="signature">
           <div class="product-media">
             <span class="product-tag">Signature</span>
@@ -156,11 +183,13 @@
     <div class="footer-top">
       <a href="index.html#hero" class="logo">Elia Ora Studio</a>
       <ul class="footer-links">
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#philosophy">Philosophy</a></li>
+        <li><a href="index.html#collection">Collections</a></li>
+        <li><a href="story.html">Our Story</a></li>
+        <li><a href="philosophy.html">Philosophy</a></li>
         <li><a href="shop.html">Shop</a></li>
         <li><a href="index.html#contact">Contact</a></li>
         <li><a href="track.html">Track Order</a></li>
+        <li><a href="https://instagram.com/the_e.o.s" target="_blank" rel="noopener">Instagram</a></li>
       </ul>
     </div>
     <div class="footer-bottom">
